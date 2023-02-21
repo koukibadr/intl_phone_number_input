@@ -181,8 +181,7 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
           (await PhoneNumberUtil.isValidNumber(
               phoneNumber: widget.initialValue!.phoneNumber!,
               isoCode: widget.initialValue!.isoCode!))!) {
-        String phoneNumber =
-            await PhoneNumber.getParsableNumber(widget.initialValue!);
+        String phoneNumber = widget.initialValue!.parseNumber();
 
         controller!.text = widget.formatInput
             ? phoneNumber
